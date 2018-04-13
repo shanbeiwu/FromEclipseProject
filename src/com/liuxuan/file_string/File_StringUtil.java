@@ -2,9 +2,12 @@ package com.liuxuan.file_string;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class File_StringUtil {
 	
@@ -57,8 +60,30 @@ public class File_StringUtil {
 		}
 	}
 	
+	public static void readfile() {
+		StringBuffer sb = new StringBuffer();
+		String read = null;
+		File f = new File("C:\\Users\\É½±´Îì\\Desktop\\Test2.txt");
+		try {
+			FileInputStream fis = new FileInputStream(f);
+			InputStreamReader isr = new InputStreamReader(fis, "utf-8");
+			BufferedReader br = new BufferedReader(isr);
+			while((read = br.readLine()) != null) {
+				sb.append(read);
+			}
+			System.out.println(sb);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
 	
 	public static void main(String[] args) {
-		File_StringUtil.filelist();
+		File_StringUtil.readfile();
 	}
 }

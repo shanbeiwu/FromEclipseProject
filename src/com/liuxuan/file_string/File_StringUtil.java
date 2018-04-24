@@ -82,8 +82,24 @@ public class File_StringUtil {
 		
 	}
 	
+	public static void countfile() throws Exception {
+		File file = new File("C:\\Users\\É½±´Îì\\Desktop\\Test2.txt");
+		InputStream is = new FileInputStream(file);
+		byte b[] = new byte[1024];
+		int a = is.read(b);
+		String str[] = new String(b, 0, a).split("");
+		int count = 0;
+		for(int i = 0; i < str.length; i++) {
+			System.out.print(str[i]);
+			if ("a".equals(str[i])) {
+				count++;
+			}
+		}
+		System.out.println(str);
+	}
 	
-	public static void main(String[] args) {
-		File_StringUtil.readfile();
+	
+	public static void main(String[] args) throws Exception {
+		File_StringUtil.countfile();;
 	}
 }

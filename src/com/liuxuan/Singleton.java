@@ -14,6 +14,16 @@ public class Singleton {
 	
 }
 
+/*
+class sing {
+	private static sing s = new sing();
+	private sing() {}
+	public static sing getInatance() {
+		return s;
+	}
+}
+*/
+
 /**
  * 单例模式用例，懒汉式单例
  * @author 山贝戊
@@ -27,5 +37,16 @@ class Singleton2 {
 			singleton2 = new Singleton2();
 		}
 		return singleton2;
+	}
+}
+
+class sing2 {
+	private static sing2 s2 = new sing2();
+	private sing2() {}
+	public static synchronized sing2 getInatance() {
+		if (s2 == null) {
+			s2 = new sing2();
+		}
+		return s2;
 	}
 }

@@ -2,6 +2,8 @@ package com.liuxuan.binarysearch;
 
 import java.util.Arrays;
 
+import com.sun.org.apache.regexp.internal.recompile;
+
 /**
  * 二分法查询：要求查询数据必须采用顺序存储结构/必须按照关键字大小有序排列
  * @author 山贝戊
@@ -48,6 +50,22 @@ public class BinarySearch {
 				low = middle + 1;
 			}
 			
+		}
+		return -1;
+	}
+	
+	public static int bs(int[] array, int des) {
+		int low = 0;
+		int heigh = array.length-1;
+		while (low <= heigh) {
+			int middle = (low + heigh) / 2;
+			if (des == array[middle]) {
+				return middle;
+			} else if (des < array[middle]) {
+				heigh = middle - 1;
+			} else {
+				low = middle + 1;
+			}
 		}
 		return -1;
 	}

@@ -17,7 +17,8 @@ public class MaoPao {
 	
 	public static void main(String[] args) {
 		int[] arrays = {5, 12, 6, 213, 7, 1, 4, 8, 25, 91};
-		bubble_sort(arrays);
+		Arrays.sort(arrays);
+		//bubble_sort(arrays);
 		for(int k = 0 ; k < arrays.length ; k++){
 			System.out.print(arrays[k] + ", ");
 			

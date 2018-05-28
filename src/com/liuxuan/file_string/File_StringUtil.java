@@ -98,8 +98,15 @@ public class File_StringUtil {
 		System.out.println(str);
 	}
 	
+	public static void getFile() throws IOException {
+		StringBuilder sb = new StringBuilder("this is new string");
+		sb.replace(0, sb.length(), "this is number 123");
+		FileInputStream fis = new FileInputStream(new File("D:\\images\\001.jpg"));
+		System.out.println(sb + "\n" +fis);
+	}
+	
 	
 	public static void main(String[] args) throws Exception {
-		File_StringUtil.countfile();;
+		File_StringUtil.getFile();
 	}
 }

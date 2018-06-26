@@ -17,9 +17,9 @@ public class File_StringUtil {
 	
 	/**
 	 * 统计给定文件中给定字符串的出现次数
-	 * @param filename
-	 * @param word
-	 * @return
+	 * @param filename(统计文件)
+	 * @param word(所需要匹配的字段)
+	 * @return counter(出现的测次数)
 	 */
 	
 	public static int countWordInFile(String filename, String word){
@@ -72,6 +72,7 @@ public class File_StringUtil {
 				sb.append(read);
 			}
 			System.out.println(sb);
+			br.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -79,6 +80,7 @@ public class File_StringUtil {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		
 	}
 	
@@ -96,6 +98,7 @@ public class File_StringUtil {
 			}
 		}
 		System.out.println(str);
+		is.close();
 	}
 	
 	public static void getFile() throws IOException {
@@ -103,6 +106,7 @@ public class File_StringUtil {
 		sb.replace(0, sb.length(), "this is number 123");
 		FileInputStream fis = new FileInputStream(new File("D:\\images\\001.jpg"));
 		System.out.println(sb + "\n" +fis);
+		fis.close();
 	}
 	
 	
